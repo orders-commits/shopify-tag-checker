@@ -1,0 +1,17 @@
+name: Shopify Tag Checker
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  check-tags:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run tag check
+        run: |
+          curl -s -o response.json -w "%{http_code}" \
+            -X GET "${{ secrets.VERCEL_CHECK_URL }}" \
+            -H "Content-Type: application/json"
+          cat response.json
