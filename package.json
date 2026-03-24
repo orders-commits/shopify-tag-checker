@@ -1,0 +1,9 @@
+{
+  "name": "shopify-tag-checker",
+  "version": "1.0.0",
+  "description": "Checks Shopify order tags and notifies Slack",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  }
+}
